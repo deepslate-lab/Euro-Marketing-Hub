@@ -1,0 +1,109 @@
+Build a modern, professional website for Euro Marketing Pvt. Ltd., the Maldives' leading food & beverage wholesale/retail company.
+
+DESIGN SPECS:
+- Next.js 14 App Router + TypeScript + Tailwind CSS
+- Color scheme: Deep blue (#1e3a8a) primary, orange (#f97316) accents, white backgrounds
+- Modern, clean layout with smooth animations
+- Mobile-responsive, fast-loading
+- Hero section with full-width banner image placeholder
+- Floating WhatsApp button (bottom-right)
+
+PAGES & SECTIONS:
+
+1. HOME PAGE (/)
+- Hero: "Maldives' Premier Food & Beverage Distributor" + CTA buttons
+- Brand showcase grid (6x10 grid, 60 brands with logos as divs with brand names)
+- Services overview (3 cards: Retail, Wholesale, Food Service)
+- Stats counter (500+ Products, 10 Locations, 27+ Years)
+- CTA section
+
+2. ABOUT (/about)
+- Company story: "Founded August 1997, serving tourism industry and local trade"
+- Mission/Vision cards
+- Timeline graphic
+
+3. BRANDS (/brands)
+- Category filter tabs (All, Chocolates, Beverages, Coffee, Snacks, etc.)
+- Brand grid with clickable logos linking to external sites
+- Search bar (visual only)
+- Brand data array with 60 brands:
+
+const brands = [
+  { name: "McVitie's", url: "http://www.mcvities.co.uk", category: "Biscuits" },
+  { name: "Ülker", url: "http://www.ulker.com", category: "Biscuits" },
+  { name: "Cirio", url: "http://www.cirio.it", category: "Canned Food" },
+  { name: "Rognoni", url: "http://www.rognoniformaggi.it", category: "Cheese" },
+  { name: "Kinder", url: "http://www.kinder.com", category: "Chocolate" },
+  { name: "Lindt", url: "http://www.chocolate.lindt.com", category: "Chocolate" },
+  { name: "Milka", url: "http://www.mondelezinternational.com", category: "Chocolate" },
+  { name: "Toblerone", url: "http://www.mondelezinternational.com", category: "Chocolate" },
+  { name: "Cadbury", url: "http://www.mondelezinternational.com", category: "Chocolate" },
+  { name: "Cocio", url: "http://www.cocio.com", category: "Chocolate Milk" },
+  { name: "Ferrero", url: "http://www.ferrero.com", category: "Chocolate" },
+  { name: "Lavazza", url: "http://www.lavazza.com", category: "Coffee" },
+  { name: "Melitta", url: "http://www.melitta.com", category: "Coffee" },
+  { name: "ISAS", url: "http://www.isas.it", category: "Coffee" },
+  { name: "Puck", url: "http://www.arla.com", category: "Cheese" },
+  { name: "Arla", url: "http://www.arla.com", category: "Dairy" },
+  { name: "Dano", url: "http://www.arla.com", category: "Dairy" },
+  { name: "Red Bull", url: "http://www.redbull.com", category: "Energy Drink" },
+  { name: "Salomon", url: "http://www.salomon-foodworld.com", category: "Frozen Food" },
+  { name: "Orogel", url: "http://www.orogel.com", category: "Frozen Food" },
+  { name: "Granini", url: "http://www.granini.com", category: "Juice" },
+  { name: "Réa", url: "http://www.rea.fr", category: "Juice" },
+  { name: "Haribo", url: "http://www.haribo.com", category: "Candy" },
+  { name: "Nutella", url: "http://www.nutella.com", category: "Spread" },
+  { name: "Langnese", url: "http://www.langnese-honey.com", category: "Honey" },
+  { name: "Kalfany", url: "http://www.kalfany.de", category: "Candy" },
+  { name: "Carpigiani", url: "http://www.carpigiani.com", category: "Machines" },
+  { name: "Hero", url: "http://www.hero-group.ch", category: "Jam" },
+  { name: "Schwartau", url: "http://www.schwartau.de", category: "Jam" },
+  { name: "Biadgi", url: "http://www.biadgi.com", category: "Spices" },
+  { name: "Monbana", url: "http://www.monbana.com", category: "Chocolate" },
+  { name: "Tic Tac", url: "http://www.tictac.com", category: "Candy" },
+  { name: "Powermints", url: "http://www.powermints.de", category: "Candy" },
+  { name: "1883", url: "http://www.1883.com", category: "Syrups" },
+  { name: "Fabbri", url: "http://www.en.fabbri1905.com", category: "Syrups" },
+  { name: "Nature's Harvest", url: "http://www.facebook.com/mynaturesharvest/", category: "Fruits" },
+  { name: "FIJI Water", url: "http://www.fijiwater.com", category: "Water" },
+  { name: "BRITA", url: "http://www.brita.com", category: "Water Filters" },
+  { name: "Jacobs", url: "http://www.jacobscoffee.ge", category: "Coffee" },
+  { name: "Rummo", url: "http://www.pastarummo.com", category: "Pasta" },
+  { name: "Caffarel", url: "http://www.caffarel.com", category: "Chocolate" },
+  { name: "Kokola", url: "http://www.kokolabiscuit.com", category: "Biscuits" },
+  { name: "Costa d'Oro", url: "http://www.oliocostadoro.com", category: "Olive Oil" },
+  { name: "Ristoris", url: "http://www.ristoris.it", category: "Coffee" },
+  { name: "Siafa", url: "http://www.siafadates.com", category: "Dates" },
+  { name: "Bahlsen", url: "http://www.bahlsen.com", category: "Biscuits" },
+  { name: "Loacker", url: "http://www.loacker.com", category: "Wafers" },
+  { name: "Corny", url: "http://www.corny.de", category: "Energy Bar" },
+  { name: "Lorenz", url: "http://www.lorenz-snacks.com", category: "Snacks" },
+  { name: "Molini Fagioli", url: "http://www.molinifagioli.it", category: "Flour" },
+  { name: "Lurpak", url: "http://www.lurpak.com", category: "Butter" },
+  { name: "Gaggia", url: "http://www.gaggia.com/", category: "Machines" },
+  { name: "Motta", url: "http://www.motta-usa.com", category: "Cured Meats" },
+  { name: "Be Fresh", url: "http://www.befreshproduce.com", category: "Fruits" },
+  { name: "MTR", url: "https://www.mtrfoods.com/", category: "Indian Food" }
+];
+
+4. BRANCHES (/branches)
+- Grid of 11 locations with map icons
+- Placeholder addresses/phones: "Address: [To be added]", "Phone: +960 XXX XXXX"
+- Google Maps embed placeholder
+
+5. CONTACT (/contact)
+- Contact form (name, email, company, message) - non-functional
+- Office details sidebar
+- Social media: Facebook, Twitter icons
+
+FOOTER:
+- Quick links, Social media, Copyright "© 2024 Euro Marketing Pvt. Ltd."
+
+COMPONENTS:
+- Navbar with logo text "EURO MARKETING"
+- Gradient backgrounds, hover effects, smooth transitions
+- Professional typography (Inter font)
+
+Use placeholder images from /public folder. Keep animations subtle. Focus on clean, corporate aesthetic suitable for B2B wholesale company.
+
+do not generate any images. use images you find online if needed. keep the limit under free tokens if possible
