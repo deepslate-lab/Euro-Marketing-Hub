@@ -1,14 +1,19 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [
+  "functions": {
+    "api/index.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": "/index.cjs"
+      "src": "/api/(.*)",
+      "dest": "/api"
     },
     {
-      "source": "/:path*",
-      "destination": "/index.cjs"
+      "src": "/(.*)",
+      "dest": "/api"
     }
   ]
 }
