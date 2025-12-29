@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import logoUrl from "@assets/eurologocrp_1766993964552.jpg";
 
 export function Navbar() {
   const [location] = useLocation();
@@ -39,13 +40,11 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-primary text-white flex items-center justify-center rounded-lg font-bold text-xl shadow-lg group-hover:bg-primary/90 transition-colors">
-              E
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-primary leading-none">EURO</span>
-              <span className="text-xs font-semibold tracking-widest text-accent">MARKETING</span>
-            </div>
+            <img 
+              src={logoUrl} 
+              alt="Euro Marketing Logo" 
+              className="h-12 object-contain group-hover:opacity-80 transition-opacity"
+            />
           </Link>
 
           {/* Desktop Nav */}
