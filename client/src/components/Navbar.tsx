@@ -14,6 +14,7 @@ export function Navbar() {
     { href: "/about", label: "About Us" },
     { href: "/brands", label: "Our Brands" },
     { href: "/branches", label: "Locations" },
+    { href: "/register", label: "Register as Partner" },
     { href: "/contact", label: "Contact" },
   ];
 

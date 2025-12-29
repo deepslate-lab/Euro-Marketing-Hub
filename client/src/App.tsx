@@ -15,6 +15,7 @@ import About from "@/pages/About";
 import Brands from "@/pages/Brands";
 import Branches from "@/pages/Branches";
 import Contact from "@/pages/Contact";
+import Register from "@/pages/Register";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -42,6 +43,9 @@ function Router() {
         </Route>
         <Route path="/contact">
           <PageWrapper><Contact /></PageWrapper>
+        </Route>
+        <Route path="/register">
+          <PageWrapper><Register /></PageWrapper>
         </Route>
         <Route component={NotFound} />
       </Switch>
